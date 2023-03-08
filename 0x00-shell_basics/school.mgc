@@ -1,1 +1,2 @@
-0 string SCHOOL School data file
+0       regex       \bSCHOOL\b       School data file
+!:mime  application/octet-stream
