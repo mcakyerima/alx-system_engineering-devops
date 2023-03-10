@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod ugo+x */ -R --exclude=.
+find . -mindepth 1 -type d -exec chmod ugo+x {} \;
