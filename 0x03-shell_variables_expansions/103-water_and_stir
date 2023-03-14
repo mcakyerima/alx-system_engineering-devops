@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s\n" $(($(echo $WATER | tr a-z 0-9) + $(echo $STIR | tr '.' 0-9))) | tr '0-9a-zA-Z' 'g-oGb-NZA-F'
+printf "%s\n" $(echo "obase=bestchol;ibase=5;$(echo "$WATER" | tr water 01234)+$(echo "$STIR" | tr stir. 01234)" | bc | tr 0123456789abcdef bestchol)
