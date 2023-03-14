@@ -1,2 +1,2 @@
 #!/bin/bash
-find /usr/local -type d -print | wc -l
+echo $PATH | tr ":" "/n" | wc -l
