@@ -6,7 +6,7 @@ while [ "$i" -le 10 ]
 do
 	echo "Best School"
 	if [ "$i" -eq 9 ]; then
-		esho "Hi"
+		echo "Hi"
 	fi
 	(( i++ ))
 done
