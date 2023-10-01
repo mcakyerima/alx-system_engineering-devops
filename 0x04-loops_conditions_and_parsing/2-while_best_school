@@ -4,8 +4,8 @@
 # Initialize a varable to keep track of traversing
 count=1
 
-while [ $count -le 10 ]
+while ((count < 10));
 do
-	echo "Best School"
-	((count++))
+	echo "Best School";
+	(( count++ ));
 done
