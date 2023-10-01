@@ -9,6 +9,5 @@ while [ $count -le 10 ]
 do
 	echo "Best School"
 
-	# increment count
 	((count++))
 done

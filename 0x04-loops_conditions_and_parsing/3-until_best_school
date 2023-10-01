@@ -9,7 +9,5 @@ until [ $count -gt 10 ]
 do
 	echo "Best School"
 
-	# Increment count
 	((count++))
 done
-
