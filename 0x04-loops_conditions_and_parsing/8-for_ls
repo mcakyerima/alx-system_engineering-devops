@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Script that lists the content in thecurrent directory without initial #- in filenames
+
+files="$(ls)"
+for f in $files;
+do
+    echo "$f" | cut -d "-" -f2
+done
