@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # This script displays "Best School" 10 times using a while loop
 
 # Initialize a varable to keep track of traversing
