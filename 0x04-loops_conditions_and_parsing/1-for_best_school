@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script prints "Best School" 10 times in the terminal
+# We use a dummy variable _ for shellCheck convention
+
+for _ in {1..10}
+do
+	echo "Best School"
+done
+
