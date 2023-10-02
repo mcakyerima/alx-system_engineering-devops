@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Script that displays the content of the file /etc/passwd
+# cuts "username", "user id", "Home directory path for the user"
+
+# Check if /etc/passwd exists & is readable
+if [ -r /etc/passwd ]; then
+    # Use a while loop to read lines from /etc/passwd
+    while IFS= read -r line; do
+        # Process each line and print
+        echo "$line" | cut -d ":" -f1,3,6
+    done < /etc/passwd
+else
+    echo "Error: /etc/passwd does not exist or is not readable."
+fi
