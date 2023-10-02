@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Bash script that displays the content of the file /etc/passwd, using the while loop + IFS
+
+# read and split string using ":" as delimeter
+while IFS=":" read -r user pwd uid gid uinfo homdir shell
+do
+	echo "The user $user is part of the $gid gang, lives in $homdir and \
+rides $shell. $uid's place is protected by the passcode $pwd, \
+more info about the user here: $uinfo"
+done < /etc/passwd
