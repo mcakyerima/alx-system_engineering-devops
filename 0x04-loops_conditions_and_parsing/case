@@ -1,0 +1,33 @@
+
+# Read user input
+choice=0
+# loop until exit
+while [ "$choice" -ne 3 ]
+do
+	# Display a menu
+	echo "Select an option:"
+	echo "1. View files in the current directory"
+	echo "2. Display system information"
+	echo "3. Exit"
+
+	read choice
+	# use a case statement to process the choice
+	case $choice in
+		1)
+			echo "Listing files in the current directory:"
+			ls
+			;;
+		2)
+			echo "System information:"
+			uname -a
+			;;
+		3)
+			echo "Exiting the script."
+			exit 0
+			;;
+		*)
+			echo "Invalid choice. Please select a valid option (1-3)."
+			;;
+	esac
+
+done

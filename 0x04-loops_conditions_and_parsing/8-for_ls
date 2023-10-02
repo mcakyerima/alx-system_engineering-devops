@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script that lists the content in thecurrent directory without initial #- in filenames
+# this Script lists the content in thecurrent directory without trailing #- in filenames
 
 files="$(ls)"
 for f in $files;
