@@ -5,19 +5,19 @@
 
 # Function to remove the PID file and exit
 cleanup_and_exit() {
-    rm -f /var/run/my_script.pid
+    rm -f /var/run/myscript.pid
     exit
 }
 
 # Register a trap for SIGINT (Ctrl-C) with a custom message
-trap "echo 'Caught SIGINT - Terminating script'; cleanup_and_exit" SIGINT
+trap "echo 'Y U no love me?!'; cleanup_and_exit" SIGINT
 
 # Register traps for SIGTERM and SIGQUIT with custom messages and cleanup
-trap "echo 'Caught SIGTERM - Terminating script'; cleanup_and_exit" SIGTERM
-trap "echo 'Caught SIGQUIT - Terminating script'; cleanup_and_exit" SIGQUIT
+trap "echo 'I hate the kill command'; cleanup_and_exit" SIGTERM
+trap "echo 'I hate the kill command'; cleanup_and_exit" SIGQUIT
 
 # Create a PID file with the current process ID
-echo $$ > /var/run/my_script.pid
+echo $$ > /var/run/myscript.pid
 
 # Main loop: Print a message and sleep
 while true; do
