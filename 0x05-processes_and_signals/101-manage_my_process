@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Start/Stops/Restarts. Script to be used with manage_my_process
+
+# Assign the first argument to argv1
+argv1=$1
+# Define the PID file path
+pidfile="/var/run/my_process.pid"
+
+# Function to start the process and create a PID file
+start_process_and_create_pidfile() {
+    ./manage_my_process &
+    echo "$!" > "$pidfile"
+}
+
+# Function to stop the process and remove the PID file
+stop_process_and_remove_pidfile() {
+    #kill "$(cat "$pidfile")"
+    sudo pkill -f "./manage_my_process"
+    rm "$pidfile"
+}
+
+# Check the value of the first argument and perform the corresponding action
+case "$argv1" in
+    start)
+        echo "manage_my_process started"
+        start_process_and_create_pidfile
+        ;;
+    stop)
+        echo "manage_my_process stopped"
+        stop_process_and_remove_pidfile
+        ;;
+    restart)
+        echo "manage_my_process restarted"
+        stop_process_and_remove_pidfile
+        start_process_and_create_pidfile
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+        ;;
+esac

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Infinite loop script for managing my_process.
+
+# This script runs an infinite loop, periodically echoing "I am alive!" to the /tmp/my_process file.
+# It is intended for use with the 101-manage_my_process script.
+
+while (true)
+do
+    echo "I am alive!" >> /tmp/my_process
+    sleep 2
+done

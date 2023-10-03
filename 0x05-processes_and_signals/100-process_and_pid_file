@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# This script demonstrates handling signals (SIGINT, SIGTERM, SIGQUIT) in an
+# infinite loop, creating a PID file, and cleaning up the file on exit.
+
+# Function to remove the PID file and exit
+cleanup_and_exit() {
+    rm -f /var/run/my_script.pid
+    exit
+}
+
+# Register a trap for SIGINT (Ctrl-C) with a custom message
+trap "echo 'Caught SIGINT - Terminating script'; cleanup_and_exit" SIGINT
+
+# Register traps for SIGTERM and SIGQUIT with custom messages and cleanup
+trap "echo 'Caught SIGTERM - Terminating script'; cleanup_and_exit" SIGTERM
+trap "echo 'Caught SIGQUIT - Terminating script'; cleanup_and_exit" SIGQUIT
+
+# Create a PID file with the current process ID
+echo $$ > /var/run/my_script.pid
+
+# Main loop: Print a message and sleep
+while true; do
+    echo 'To infinity and beyond'
+    sleep 2
+done

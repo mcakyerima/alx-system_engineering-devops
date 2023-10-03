@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script that forcefully kills another script running in another terminal.
+
+pkill -KILL -f "7-highlander"

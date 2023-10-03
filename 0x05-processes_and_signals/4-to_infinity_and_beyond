@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script that displays "To infinity and beyond" and sleeps 2 second
+# Press Ctrl+c to terminate
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done

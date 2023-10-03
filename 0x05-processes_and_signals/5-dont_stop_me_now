@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# killing the "4-to_infinity_and_beyond" scipt in another terminal
+
+kill "$(pgrep -f "4-to_infinity_and_beyond")"

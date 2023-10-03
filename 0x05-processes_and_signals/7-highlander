@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Script that recieve kill signal from another script running in another terminal
+# Kill signal is caught and ignored; printing "I am invincible"
+
+warning()
+{
+    echo "I am invincible!!!"
+}
+trap "warning" SIGTERM
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+
+done
