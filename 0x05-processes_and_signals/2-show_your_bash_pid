@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script that display bash PID but not using pgrep
+# shellcheck disable=SC2009
+
+ps -auxf | grep "bash"
