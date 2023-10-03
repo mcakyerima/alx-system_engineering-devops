@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# a: display processes, u: user oriented view, f: display heirachy, x: TTY
+
+ps -auxf
