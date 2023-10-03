@@ -23,7 +23,8 @@ int infinite_while(void)
  *
  * This function creates 5 zombie processes by forking child processes.
  *
- * Return: Returns the result of the infinite_while function (should never return).
+ * Return: Returns the result of the infinite_while function
+	(should never return).
  */
 int main(void)
 {
