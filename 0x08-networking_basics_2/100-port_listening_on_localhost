@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Netcat Port Listener
+
+# Description: This Bash script listens for incoming connections on port 98
+#              of the localhost using the Netcat (nc) tool.
+
+# Usage:
+#   1. Run this script in one terminal: sudo ./[filename]
+#   2. In another terminal, connect to the local port 98 using Telnet:
+#      telnet localhost 98
+#   3. Once connected, you can send messages from the Telnet terminal,
+#      and they will be displayed in the terminal running this script.
+
+# Step 1: Start Netcat Listener
+# Listen (-l) on port 98 for incoming connections.
+nc -l 98

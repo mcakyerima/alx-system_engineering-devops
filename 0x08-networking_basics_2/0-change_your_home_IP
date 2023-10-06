@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Docker Hostfile Modifier Script
+
+# Step 1: Create a Backup
+# Copy the system's hostfile to a temporary file for modifications.
+cp /etc/hosts hosts_tmp
+
+# Step 2: Perform Substitutions
+# Use 'sed' to replace localhost and facebook.com IP mappings in the temporary file.
+# Replace 'localhost' with '127.0.0.2' and 'facebook.com' with '8.8.8.8'.
+sed -i 's/127.*$/127.0.0.2\tlocalhost\n8.8.8.8\tfacebook.com/g' hosts_tmp
+
+# Step 3: Update the Hostfile
+# Replace the original hostfile with the modified version.
+cp -f hosts_tmp /etc/hosts
+
+# End of Script
