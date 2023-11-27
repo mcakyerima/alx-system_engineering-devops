@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+# a script that uses ssh to connect to your server sing the private
+# key ~.ssh/school with user ubuntu
+
+ssh -i ~/.ssh/school ubuntu@8.8.8.8
