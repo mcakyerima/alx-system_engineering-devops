@@ -1,4 +1,12 @@
+
 # 100-puppet_ssh_config.pp
+
+file { '/home/your_username/.ssh/config':
+  ensure => 'present',
+  mode   => '0600',
+  owner  => 'mcakyerima',
+  group  => 'mcakyerima',
+}
 
 include stdlib
 
