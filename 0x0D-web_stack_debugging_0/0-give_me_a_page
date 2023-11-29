@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This how i Troubleshooted my webserver
+if [ ! -f "/usr/sbin/apache2" ]; then
+    echo "Apache is not installed"
+fi
+if [ ! -f "/usr/sbin/nginx" ]; then
+    echo "nginx is not installed"
+fi
+# Restarting Service
+sudo service apache2 restart
