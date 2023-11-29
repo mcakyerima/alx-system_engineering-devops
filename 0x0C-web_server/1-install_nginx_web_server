@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Install an nginx that listens on Port: 80
+# Returns a page containing "Hello World" when querying
+if [ ! -d "/usr/share/nginx/" ]; then
+    apt-get -y install nginx
+fi
+echo "Hello World!" > /usr/share/nginx/html/index.html
+service nginx restart
