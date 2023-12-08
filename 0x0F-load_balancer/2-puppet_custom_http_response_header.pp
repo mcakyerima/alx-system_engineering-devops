@@ -1,4 +1,8 @@
-# 2-puppet_custom_http_response_header.pp
+# Puppet manifest to configure Nginx with a custom HTTP header
+# The name of the custom HTTP header is X-Served-By
+# The value of the custom HTTP header is the hostname of the server Nginx is running on
+
+# Install Nginx package
 
 # Install Nginx package
 package { 'nginx':
