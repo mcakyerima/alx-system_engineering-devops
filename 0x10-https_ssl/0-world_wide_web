@@ -1,29 +1,20 @@
+#!/usr/bin/env bash
+# Bash script displays DNS records: record type, IP, subdomains
 
-#!/bin/bash
-
-# Function to display information for a subdomain
-get_subdomain_info() {
-    subdomain=$1
-    domain=$2
-
-    dig_output=$(dig ${subdomain}.${domain} | grep -A1 'ANSWER SECTION:')
-    record_type=$(echo "$dig_output" | awk '/IN\s/{print $4}')
-    destination=$(echo "$dig_output" | awk '/IN\s/{print $5}')
-
-    echo "The subdomain ${subdomain} is a ${record_type} record and points to ${destination}"
+print_rec ()
+{
+    printf "The subdomain %s is a " "$2"
+    dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk -F' ' '{ printf $4 }'
+    printf " record and points to "
+    dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk -F' ' '{ printf $5 }'
+    echo ""
 }
 
-# Main script
-if [ "$#" -eq 1 ]; then
-    # If only the domain is provided, display information for specific subdomains
-    get_subdomain_info www $1
-    get_subdomain_info lb-01 $1
-    get_subdomain_info web-01 $1
-    get_subdomain_info web-02 $1
-elif [ "$#" -eq 2 ]; then
-    # If both domain and subdomain are provided, display information for the specified subdomain
-    get_subdomain_info $2 $1
+if [ -z "$2" ]; then
+   for subs in "www" "lb-01" "web-01" "web-02"
+   do
+       print_rec "$1" "$subs"
+   done
 else
-    # Invalid number of arguments
-    echo "Usage: $0 domain [subdomain]"
+    print_rec "$1" "$2"
 fi
