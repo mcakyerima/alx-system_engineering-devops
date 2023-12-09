@@ -4,3 +4,4 @@
 
 sudo sed -i "s/sites-enabled/sites-available/" /etc/nginx/nginx.conf
 sudo service nginx restart
+sudo service nginx status | grep -q "not running" && echo " * nginx is not running"
