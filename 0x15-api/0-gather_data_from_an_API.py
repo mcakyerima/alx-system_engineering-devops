@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Request from API; Return a Todo list progress given employee ID
+Request from API; Return TODO list progress given employee ID
 """
 import requests
 from sys import argv
@@ -21,8 +21,8 @@ def display():
         if t.get('userId') == int(argv[1]):
             TOTAL_NUM_OF_TASKS += 1
             if t.get('completed') is True:
-                    NUMBER_OF_DONE_TASKS += 1
-                    TASK_TITLE.append(t.get('title'))
+                NUMBER_OF_DONE_TASKS += 1
+                TASK_TITLE.append(t.get('title'))
     print("Employee {} is done with tasks({}/{}):".format(EMPLOYEE_NAME,
                                                           NUMBER_OF_DONE_TASKS,
                                                           TOTAL_NUM_OF_TASKS))
