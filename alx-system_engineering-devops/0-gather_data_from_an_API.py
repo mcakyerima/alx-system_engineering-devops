@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Request from API; Return TODO list progress given employee ID
+Request from API; Return a Todo list progress given employee ID
 """
 import requests
 from sys import argv
