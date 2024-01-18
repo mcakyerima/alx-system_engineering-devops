@@ -34,5 +34,5 @@ def number_of_subscribers(subreddit):
         subscribers = data["data"]["subscribers"]
         return subscribers
     else:
-        # Return 0 for invalid subreddit
+        # Return 0 for an invalid subreddit
         return 0
